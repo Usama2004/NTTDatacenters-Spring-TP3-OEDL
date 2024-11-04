@@ -11,6 +11,14 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
+    public List<Cliente> buscarPorNombre(String nombre) {
+        return clienteRepository.findByNombre(nombre);
+    }
+
+    public List<Cliente> buscarPorApellidos(String apellidos) {
+        return clienteRepository.findByApellidos(apellidos);
+    }
+
     public List<Cliente> buscarPorNombreYApellidos(String nombre, String apellidos) {
         return clienteRepository.findByNombreAndApellidos(nombre, apellidos);
     }

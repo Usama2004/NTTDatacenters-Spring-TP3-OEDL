@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	//Extiende JpaRepository para proporcionar métodos CRUD.
+	List<Cliente> findByNombre(String nombre);
+    List<Cliente> findByApellidos(String apellidos);
     List<Cliente> findByNombreAndApellidos(String nombre, String apellidos);
 }
